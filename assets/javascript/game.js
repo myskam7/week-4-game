@@ -7,14 +7,11 @@ $(document).ready(function () {
     var wins = 0;
     var losses = 0;
     var randomNumGuess = [Math.floor(Math.random() * (120 - 19) + 19)];
-    var char1 = [];
-    var char2 = [];
-    var char3 = [];
-    var char4 = [];
+  
 
 
     function reset() {
-
+        $('img').fadeOut(1500).fadeIn(1000);
         $(".mainNumber").empty();
         $(".currentNumber").empty();
         counter = 0;
@@ -25,14 +22,15 @@ $(document).ready(function () {
     }
 
     // This will be for initiating the random num and also declaring crystal variable random numbers
-    $(".mainNumber").text("Target Number: " + randomNumGuess);
+    // $('img').fadeOut(1500).fadeIn(1000);
+     $(".mainNumber").text("Target Number: " + randomNumGuess);
 
 
     var char1 = [Math.floor(Math.random() * (12 - 1) + 1)];
     var char2 = [Math.floor(Math.random() * (12 - 1) + 1)];
     var char3 = [Math.floor(Math.random() * (12 - 1) + 1)];
     var char4 = [Math.floor(Math.random() * (12 - 1) + 1)];
-    console.log(char2);
+   
 
     // This will be for linking the img with the value attr() 
     $(".1").attr("value", char1);
@@ -61,7 +59,7 @@ $(document).ready(function () {
         if (counter == randomNumGuess) {
             wins++
             counter = 0;
-            $('img').fadeOut(1500).fadeIn(1000);
+            
             alert("You Won!!")
             reset();
 
@@ -69,7 +67,7 @@ $(document).ready(function () {
         else if (counter >= randomNumGuess) {
             losses++
             counter = 0;
-            $('img').fadeOut(500).fadeIn(1000);
+            
             alert("You suck!!")
             reset();
 
@@ -84,11 +82,6 @@ $(document).ready(function () {
         $(".currentNumber").text("Current Number: " + counter);
 
 
-
-
-
     });
 
-
-    console.log(randomNumGuess);
 });
